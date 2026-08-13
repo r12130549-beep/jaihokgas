@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Lovable Zero",
+  "version": "7.0.0",
+  "description": "Unlimited Lovable with zero credits. Prototype freely and ship faster using advanced thinking-mode AI, intelligent prompt automation, attachment support, and secure license validation",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "scripting",
+    "activeTab",
+    "downloads",
+    "cookies",
+    "tabs",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://lovable.dev/*",
+    "https://*.lovable.dev/*",
+    "https://api.lovable.dev/*",
+    "https://lovable-api.com/*",
+    "https://*.lovable.app/*",
+    "https://tmpfile.link/*",
+    "https://challenges.cloudflare.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://lovable.dev/*"],
+      "js": ["jszip.min.js", "templates.js", "content.js"],
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Lovable Zero"
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}
